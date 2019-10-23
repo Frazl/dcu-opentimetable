@@ -11,6 +11,14 @@ This project can currently do the following:
     - Example usecase: see if a computing lab is free.
 - Pull information from a given location for a time range. 
 
+## Installation 
+
+The only extra required python module for this to work is *requests*.
+
+> pip3 install requests 
+
+Besides that just git clone the repo and enjoy!
+
 ## Opentimetable Overview 
 
 Opentimetable seems to work by assigning each location in DCU an *identifier*. 
