@@ -53,7 +53,7 @@ Output:
 Whether the room is free at the given hour, what is currently on in the room or an error. 
 
 Usage:
-> python3 checkfree.py LG25 08
+> python3 checkfree.py LG25
 
 Example output:
 ``` 
