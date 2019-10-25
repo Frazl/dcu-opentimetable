@@ -24,7 +24,16 @@ def parse_date(date_str):
     day = int(date_str[8:10])
     return datetime.datetime(year, month, day).date()
     
-
+def get_start_target_week(week_lis, weeknum):
+    '''
+    Gets the start date for the target week
+    '''
+    if int(weeknum) <=12:
+        semester_start = datetime.datetime(2019,9,23).date()
+        return semester_start + datetime.timedelta(weeks = int(weeknum)-1)
+    elif int(weeknum) <= 24:
+        semester_start = datetime.datetime(2020,1,27).date()
+        return semester_start + datetime.timedelta(weeks = int(weeknum)-20)
 
 def get_start_current_week(week_lis):
     '''
