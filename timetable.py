@@ -24,6 +24,28 @@ def parse_date(date_str):
     day = int(date_str[8:10])
     return datetime.datetime(year, month, day).date()
     
+def get_start_target_week(week_lis, sem_week):
+    '''
+    Gets the start date for the target week
+    '''
+    try:
+        semnum, weeknum = sem_week.split(".")[0], sem_week.split(".")[1]
+    except IndexError:
+        print("To select current a week in current semester use '.7' for example")
+        sys.exit(0)
+    if semnum == "":
+        return get_start_target_week(week_lis, get_sem_week(week_lis, weeknum))
+    elif int(semnum) == 1:
+        return week_lis[0]+ datetime.timedelta(weeks = int(weeknum)-1)
+    elif int(semnum) == 2:
+        return week_lis[19] + datetime.timedelta(weeks = int(weeknum)-1)
+
+def get_sem_week(week_lis, weeknum):
+    if get_start_current_week(week_lis) <= week_lis[12]:
+        sem = '1'
+    else:
+        sem = '2'
+    return ".".join((sem,weeknum)) 
 
 
 def get_start_current_week(week_lis):
