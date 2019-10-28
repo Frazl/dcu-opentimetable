@@ -34,7 +34,8 @@ def main(room, start = "", end = "", weeknum = "", day= ""):
     #Get all the weeks from the main website 
     week_lis = timetable.get_weeks()
     weeknum = week_start_calc(week_lis, weeknum) # The start of the week is needed for the site to know what week we are querying 
-    weekday = day_calc(day) # The day of the week is needed so can get the correct day 
+    weekday = day_calc(day) # The day of the week is needed so can get the correct day
+    print(weeknum)
     start = start_calc(start)# The start time ==> defaults to current time if left null 
     end = end_calc(end, start)# The end time ==> defaults to current time if left null
     # ISO weekday returns 7 for sunday when the site represents that as 0 hence modulus
@@ -65,4 +66,4 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         print(main(*sys.argv[1:][0].split(",")))
     else:
-        print(main(input("Room Number: "), input("Start Time: "), input("End Time: "), input("Week Number: "), input("Day(Sunday = 0): ")))
+        print(main(input("Room Number: "), input("Start Time: "), input("End Time: "), input("Semester.Week Number: "), input("Day(Sunday = 0): ")))

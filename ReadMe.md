@@ -61,11 +61,11 @@ This lab is free :)
 
 #### freerange.py 
 
-Ths script takes 5 arguments, the room, the start time, the end time, the week and the day that you want to check if a room is free
+Ths script takes 5 arguments, the room, the start time, the end time, Semester.Week and the day that you want to check if a room is free
 
 There are two ways to give the script input:
 - Via the CLI seperated by commas
-    - `python3 freerange.py L125,10,11,5,5` ==> this will check L125 from 10-11 on week 5 Friday.
+    - `python3 freerange.py L125,10,11,1.5,5` ==> this will check L125 from 10-11 on week 5 Friday.
     - Additionally if you leave an argument black it will default to the current value
     - e.g `python3 LG25,,,,` will check if LG25 is free right now!
            - ***note*** if you leave end blank it will default to start +1 hour
@@ -73,13 +73,21 @@ Each of the 4 time parameters def
 - Giving no command line arguments
     - This will then prompt you with questions like:
         - `What Room?: `
-        - Leave the time parameters blank and they will default to current time(beside end which is start +1 hour)
-
+        - Leave the time parameters blank and they will default to current time besides:
+            - end which is start +1 hour
+            - `.5` on the Semester.Week will chose the current semester and week 5
+            
 Usage:
 Check LG25 is free on Monday of week 7 from 10-11
 Input:
-`python3 freerange.py L128,10,,7,1`
+`python3 freerange.py L128,10,,.7,1`
 Output:
 `['CA318[1] Advanced Algorithms and A.I. Search\nStarted @10:00\nEnds @12:00\n'`
+
+
+
+
+
+
 
 
