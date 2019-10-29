@@ -38,7 +38,7 @@ def get_start_target_week(week_lis, sem_week):
     elif int(semnum) == 1:
         return week_lis[0]+ datetime.timedelta(weeks = int(weeknum)-1)
     elif int(semnum) == 2:
-        return week_lis[19] + datetime.timedelta(weeks = int(weeknum)-1)
+        return week_lis[18] + datetime.timedelta(weeks = int(weeknum)-1)
 
 def get_sem_week(week_lis, weeknum):
     if get_start_current_week(week_lis) <= week_lis[12]:
